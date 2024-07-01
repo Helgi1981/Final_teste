@@ -17,3 +17,15 @@
 // [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 // [“Russia”, “Denmark”, “Kazan”] → []
 
+
+// Вводим первоначальный массив строк
+string[] initialArray = { "Hello", "2", "world", ":-)" };
+
+// Формируем новый массив строк, длина которых меньше, либо равна 3 символам
+string[] resultArray = FilterShortStrings(initialArray);
+
+// Выводим результат
+Console.WriteLine("[" + string.Join(", ", resultArray) + "]");
+
+
+
