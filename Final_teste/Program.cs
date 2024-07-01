@@ -27,5 +27,17 @@ string[] resultArray = FilterShortStrings(initialArray);
 // Выводим результат
 Console.WriteLine("[" + string.Join(", ", resultArray) + "]");
 
-
+// Функция для подсчета количества строк, длина которых меньше, либо равна 3 символам
+int CountShortStrings(string[] array)
+{
+    int count = 0;
+    foreach (string str in array)
+    {
+        if (str.Length <= 3)
+        {
+            count++;
+        }
+    }
+    return count;
+}
 
