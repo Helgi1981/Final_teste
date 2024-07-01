@@ -18,15 +18,6 @@
 // [“Russia”, “Denmark”, “Kazan”] → []
 
 
-// Вводим первоначальный массив строк
-string[] initialArray = { "Hello", "2", "world", ":-)" };
-
-// Формируем новый массив строк, длина которых меньше, либо равна 3 символам
-string[] resultArray = FilterShortStrings(initialArray);
-
-// Выводим результат
-Console.WriteLine("[" + string.Join(", ", resultArray) + "]");
-
 // Функция для подсчета количества строк, длина которых меньше, либо равна 3 символам
 int CountShortStrings(string[] array)
 {
@@ -41,3 +32,28 @@ int CountShortStrings(string[] array)
     return count;
 }
 
+// Функция для формирования нового массива строк, длина которых меньше, либо равна 3 символам
+string[] FilterShortStrings(string[] array)
+{
+    int count = CountShortStrings(array);
+    string[] result = new string[count];
+    int index = 0;
+    foreach (string str in array)
+    {
+        if (str.Length <= 3)
+        {
+            result[index] = str;
+            index++;
+        }
+    }
+    return result;
+}
+
+// Вводим первоначальный массив строк
+string[] initialArray = { "Hello", "2", "world", ":-)" };
+
+// Формируем новый массив строк, длина которых меньше, либо равна 3 символам
+string[] resultArray = FilterShortStrings(initialArray);
+
+// Выводим результат
+Console.WriteLine("[" + string.Join(", ", resultArray) + "]");
